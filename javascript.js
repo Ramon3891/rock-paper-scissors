@@ -60,7 +60,72 @@ function computerPoint() {
     }
 }
 
-let secondMatch = prompt( "USER: "+userPoint()+" - COMPUTER: "+computerPoint()+"\n"+"\nRemember that you can use either the initial letters or the complete words");
+let secondUserChoiceOfGame = prompt( "USER: "+userPoint()+" - COMPUTER: "+computerPoint()+"\n"+"\nRemember that you can use either the initial letters or the complete words");
+
+let userSecondChoiceUpperCase = secondUserChoiceOfGame.toUpperCase();
+let secondUserChoice;
+
+function secondMatchUserChoice() {
+    if (userSecondChoiceUpperCase === "R" || userSecondChoiceUpperCase === "ROCK") {
+        return "ROCK";
+    } else if (userSecondChoiceUpperCase === "P" || userSecondChoiceUpperCase === "PAPER") {
+        return "PAPER";
+    } else if (userSecondChoiceUpperCase === "S" || userSecondChoiceUpperCase === "SCISSORS") {
+        return "SCISSORS";
+    } else {
+        alert("Not a valid choice");
+    }
+}
+
+secondUserChoice = secondMatchUserChoice();
+
+const secondComputerChoiceOfGame = ["ROCK", "PAPER", "SCISSORS"];
+const randomizeSecondComputerChoice = Math.floor(Math.random()*secondComputerChoiceOfGame.length);
+
+function secondComputerChoice() {
+    if (randomizeSecondComputerChoice === 0) {
+        return "ROCK";
+    } else if (randomizeSecondComputerChoice === 1) {
+        return "PAPER";
+    } else {
+        return "SCISSORS";
+    } 
+}
+
+const secondComputerChoiceValue = secondComputerChoice();
+
+function secondEsit() {
+    if (secondUserChoice === "ROCK" && secondComputerChoiceValue === "ROCK" || secondUserChoice === "SCISSORS" && secondComputerChoiceValue === "SCISSORS" || secondUserChoice === "PAPER" && secondComputerChoiceValue === "PAPER") {
+        return "The match ended in a tie";
+    } else if (secondUserChoice === "ROCK" && secondComputerChoiceValue === "PAPER" || secondUserChoice === "SCISSORS" && secondComputerChoiceValue === "ROCK" || secondUserChoice === "PAPER" && secondComputerChoiceValue === "SCISSORS") {
+        return "You lose";
+    } else {
+        return "You win";
+    }
+
+}
+
+console.log(secondEsit());
 
 
+function userPointSecondMatch() {
+    if (secondEsit() === "You win") {
+        return userPoint()+1;
+    } else {
+        return userPoint()+0;
+    }
+}
 
+function computerPointSecondMatch() {
+    if (secondEsit() === "You lose") {
+        return computerPoint()+1;
+    } else {
+        return computerPoint()+0;
+    }
+}
+
+let userScoreSecondMarch = parseInt(userPointSecondMatch());
+let computerScoreSecondMarch = parseInt(computerPointSecondMatch());
+
+
+let thirdUserChoice = prompt( "USER: "+userScoreSecondMarch+" - COMPUTER: "+computerScoreSecondMarch+"\n"+"\nRemember that you can use either the initial letters or the complete words");
