@@ -65,7 +65,7 @@ function computerPoint() {
     }
 }
 
-let secondUserChoiceOfGame = prompt( "USER: "+userPoint()+" - COMPUTER: "+computerPoint()+"\n"+"\nRemember that you can use either the initial letters or the complete words");
+let secondUserChoiceOfGame = prompt( "USER: "+userPoint()+" - COMPUTER: "+computerPoint()+"\n"+"\nLet's play another match.\nRemember that you can use either the initial letters or the complete words");
 
 //start second match
 
@@ -142,7 +142,7 @@ let userScoreSecondMatch = parseInt(userPointSecondMatch());
 let computerScoreSecondMatch = parseInt(computerPointSecondMatch());
 
 
-let thirdUserChoiceOfGame = prompt( "USER: "+userScoreSecondMatch+" - COMPUTER: "+computerScoreSecondMatch+"\n"+"\nRemember that you can use either the initial letters or the complete words");
+let thirdUserChoiceOfGame = prompt( "USER: "+userScoreSecondMatch+" - COMPUTER: "+computerScoreSecondMatch+"\n"+"\nLet's play another match.\nRemember that you can use either the initial letters or the complete words");
 
 //start third match
 
@@ -217,7 +217,7 @@ function computerPointThirdMatch() {
 let userScoreThirdMatch = parseInt(userPointThirdMatch());
 let computerScoreThirdMatch = parseInt(computerPointThirdMatch());
 
-let fourthUserChoiceOfGame = prompt( "USER: "+userScoreThirdMatch+" - COMPUTER: "+computerScoreThirdMatch+"\n"+"\nRemember that you can use either the initial letters or the complete words");
+let fourthUserChoiceOfGame = prompt( "USER: "+userScoreThirdMatch+" - COMPUTER: "+computerScoreThirdMatch+"\n"+"\nLet's play another match.\nRemember that you can use either the initial letters or the complete words");
 
 // start fourth match
 
@@ -291,7 +291,7 @@ function computerPointFourthMatch() {
 let userScoreFourthMatch = parseInt(userPointFourthMatch());
 let computerScoreFourthMatch = parseInt(computerPointFourthMatch());
 
-let lastUserChoiceOfGame = prompt( "USER: "+userScoreFourthMatch+" - COMPUTER: "+computerScoreFourthMatch+"\n"+"\nRemember that you can use either the initial letters or the complete words");
+let lastUserChoiceOfGame = prompt( "USER: "+userScoreFourthMatch+" - COMPUTER: "+computerScoreFourthMatch+"\n"+"\nLet's play the last match.\nRemember that you can use either the initial letters or the complete words");
 
 //start last match
 
