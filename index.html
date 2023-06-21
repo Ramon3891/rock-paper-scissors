@@ -4,15 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
-    <script src="./javascript.js"></script>
-    <link rel="stylesheet" src="./style.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./animation.css">
 </head>
 
 <body>
-<h1>This is a simple game, who run in console, I'll add a UI next time</h1>
+
+    <div id = "splash"><!--start onload-->
+
+        <audio id = "funeral" controls autoplay muted> <!--width is setting to zero-->
+            <source src="./audio.mp3" type="audio/mp3">
+          </audio> 
+
+          <img src="./death.png" id="death" />
+
+          <div id="splashContainer">
+
+            <div id="buttonContainer">
+          <button id="letsPlay" onclick="playGame()">Let's play</button>
+          <button id="explainRules" onclick="readRules()">I don't know the rules</button>
+        </div>
+
+        </div>
+          <p id="audioSymbol" onclick="audioStatus()">🔇</p>  
 
 
+      
+    </div> 
+    <div id = "game"></div> <!--start onclick of start button-->
 
+
+    <script>
+
+        function playGame() {
+            splash.remove()
+            document.getElementById("game").classList.remove("gameInvisible")
+            document.getElementById("game").classList.add("gameVisible");
+        }
+
+
+      </script>
+      
+
+
+      
 </body>
-
+<script src="./javascript.js"></script>
 </html>

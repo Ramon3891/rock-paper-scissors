@@ -1,0 +1,20 @@
+@keyframes fromWhiteToBlack {
+    0% {background-color:white}
+    100% {background-color: black;}    
+}
+
+@keyframes fromBlackToWhite {
+    0% {background-color:black}
+    100% {background-color: white;}    
+}
+
+@keyframes fromTransparentToNone {
+    0% {opacity: 0;}
+    100% {opacity: 1;}    
+}
+
+@keyframes fromTransparentToNoneButtonContainer {
+    0% {opacity: 0;}
+    90% {opacity: 0;}
+    100% {opacity: 1;}    
+}

@@ -1,4 +1,75 @@
-let userChoice = prompt("Let's play Rock-Paper-Scissors game.\nPlease make your choice.\nYou can use either the initial letters or the complete words.");
+function audioStatus() { //from muted to unmuted
+    let symbol = document.getElementById("audioSymbol");
+    let audioElement = document.getElementById("funeral");
+  
+    if (symbol.textContent === "🔇") {
+      symbol.textContent = "🔊";
+      audioElement.muted = false;
+    } else {
+      symbol.textContent = "🔇";
+      audioElement.muted = true;
+    }
+  
+  }
+
+  const presentation = document.createElement("p");
+  presentation.style.color = "white";
+  presentation.style.fontSize = "27px";
+  presentation.style.whiteSpace = "pre-wrap"; // Utilizzo della proprietà whiteSpace
+  presentation.style.wordWrap = "break-word";
+  presentation.style.lineHeight = "40px";
+  let textForPresentation = `Well, dude, you're dead! It would happen sooner or later, it just happened, but...
+But I want to give you a chance to postpone your death.
+Are you happy?
+Usually, I do this thing by playing chess, but you'll never win a chess game against me, so let's try something more luck-oriented.
+What do you think about a "Rock-Paper-Scissors" game?
+Do you want to give it a try?`;
+  let splashContainer = document.getElementById("splashContainer");
+  splashContainer.appendChild(presentation);
+
+  splashContainer.insertBefore(presentation, buttonContainer);
+
+
+  let typeWriter = textForPresentation.split("");
+  let i = 0;
+  
+  function typeWriterOn() {
+    if (i < typeWriter.length) {
+      presentation.textContent += typeWriter[i];
+      i++;
+    }
+  }
+  
+  setInterval(typeWriterOn, 50);
+
+
+  function readRules() {
+    presentation.remove()
+    let explainRules = document.getElementById("explainRules");
+    explainRules.remove()
+
+    const rulesExplained = document.createElement("p");
+    rulesExplained.style.color = "white";
+    rulesExplained.style.fontSize = "23px";
+    rulesExplained.style.whiteSpace = "pre-wrap";
+    rulesExplained.style.wordWrap = "break-word";
+    rulesExplained.style.lineHeight = "32px";
+    rulesExplained.textContent = `The rules of "Rock-Paper-Scissors" are very simple:
+You have to choose between rock, paper, and scissors. Then:
+- If you are playing rock, you win if your opponent chooses scissors (rock breaks scissors).
+- If you are playing scissors, you win if your opponent chooses paper (scissors cut paper).
+- If you are playing paper, you win if your opponent chooses rock (paper wraps rock).
+- If you and your opponent are playing the same move, the match ends in a tie.
+- Otherwise, you lose and, if you lose, you die.
+Ps: The winner is the first person to reach 5 points.`;
+let splashContainer = document.getElementById("splashContainer");
+splashContainer.appendChild(rulesExplained);
+
+splashContainer.insertBefore(rulesExplained, buttonContainer);
+}
+
+
+let userChoice = pronpt("Let's play Rock-Paper-Scissors game.\nPlease make your choice.\nYou can use either the initial letters or the complete words.");
 let userChoiceUpperCase = userChoice.toUpperCase();
 let firstUserChoice;
 

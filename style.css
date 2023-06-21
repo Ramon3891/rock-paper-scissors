@@ -1,0 +1,103 @@
+body {
+    margin:0;
+}
+
+audio {
+width:0;
+}
+
+
+
+#splash {
+    width: 95%;
+    height: 90vh;
+    animation-name:fromWhiteToBlack;
+    animation-duration: 10s;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding:10vh 5% 0 0;
+}
+
+#audioSymbol {
+    font-size:50px;
+    cursor:pointer;
+    margin:0;
+    animation-name:fromTransparentToNone;
+    animation-duration: 10s;    
+}
+
+#death {
+    height: 80vh;
+    animation-name:fromTransparentToNone;
+    animation-duration: 10s;
+    padding-right: 5%;
+}
+
+#splashContainer {
+    height: 100vh;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+#buttonContainer {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    animation-name:fromTransparentToNoneButtonContainer;
+    animation-duration: 20s;
+    align-items: center;
+    padding:0 15%;
+}
+
+#letsPlay {
+    width:200px;
+    height: 40px;
+    border: 2px solid red;
+    border-radius:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#303030;
+    color: white;
+    margin-right: 10%;
+    cursor: pointer;
+}
+
+#explainRules {
+    width:200px;
+    height: 40px;
+    border: 2px solid red;
+    border-radius:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#303030;
+    color: white;
+    cursor: pointer;
+}
+
+
+.gameVisible {
+    width: 95%;
+    height: 90vh;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding:10vh 5% 0 0;
+    animation-name:fromBlackToWhite;
+    animation-duration: 10s;
+}
+
+.gameInvisible {
+    display: none;
+}
+
+
