@@ -88,15 +88,15 @@ width:0;
     position: fixed;
     top:0;
     left:0;
-    background-color: white;
     display: flex;
     justify-content: space-between;
     padding:10vh 5% 0 0;
     animation-name:fromBlackToWhite;
     animation-duration: 10s;
+    background-color: white;
 }
 
-.invisible {
+.gameInvisible {
     display: none;
 }
 

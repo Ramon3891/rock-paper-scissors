@@ -52,7 +52,7 @@ Do you want to give it a try?`;
     rulesExplained.style.color = "white";
     rulesExplained.style.fontSize = "23px";
     rulesExplained.style.whiteSpace = "pre-wrap";
-    rulesExplained.style.wordWrap = "break-word";
+    rulesExplained.style.overflowWrap = "break-word";
     rulesExplained.style.lineHeight = "32px";
     rulesExplained.textContent = `The rules of "Rock-Paper-Scissors" are very simple:
 You have to choose between rock, paper, and scissors. Then:
@@ -66,6 +66,12 @@ let splashContainer = document.getElementById("splashContainer");
 splashContainer.appendChild(rulesExplained);
 
 splashContainer.insertBefore(rulesExplained, buttonContainer);
+}
+
+function playGame() {
+    splash.remove()
+    document.getElementById("game").classList.remove("gameInvisible")
+    document.getElementById("game").classList.add("gameVisible");
 }
 
 
