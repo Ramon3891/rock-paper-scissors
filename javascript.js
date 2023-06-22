@@ -16,7 +16,7 @@ function audioStatus() { //from muted to unmuted
   presentation.style.color = "white";
   presentation.style.fontSize = "27px";
   presentation.style.whiteSpace = "pre-wrap"; // Utilizzo della proprietà whiteSpace
-  presentation.style.wordWrap = "break-word";
+  presentation.style.overflowWrap = "break-word";
   presentation.style.lineHeight = "40px";
   let textForPresentation = `Well, dude, you're dead! It would happen sooner or later, it just happened, but...
 But I want to give you a chance to postpone your death.
