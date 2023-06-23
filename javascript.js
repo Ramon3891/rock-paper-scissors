@@ -108,7 +108,7 @@ let deathPointOfGame = 0;
 
 playerPoint.textContent = userPointOfGame.toString();
 deathPoint.textContent = deathPointOfGame.toString();
-
+pseudoPrompt.textContent="let's start the game";
 
 
    function changeRock() {
@@ -239,38 +239,40 @@ function playGame () {
         pseudoPrompt.textContent=("Make your choice");
     }
 
-      function deathWin() {
-        if (deathPointOfGame === 1) {
-          pseudoPrompt.textContent="You lose, I win";
-        } else if (deathPointOfGame === 2) {
-          pseudoPrompt.textContent="You lose, again! You are a loser!";
-        } else if (deathPointOfGame === 3) {
-          pseudoPrompt.textContent="You don't seem to be in such good shape, I still won";
-        } else if (deathPointOfGame === 4) {
-          pseudoPrompt.textContent="I have a match point!";
-        } else if (deathPointOfGame === 5) {
-          pseudoPrompt.textContent="You lose the game! You know what this means?";
-        } else {
-          return false;
+    function deathWin() {
+      let internalPointDeathCaseWin = deathPointOfGame + 1;
+      if (internalPointDeathCaseWin === 1) {
+        pseudoPrompt.textContent="You lose, I win";
+      } else if (internalPointDeathCaseWin === 2) {
+        pseudoPrompt.textContent="You lose, again! You are a loser!";
+      } else if (internalPointDeathCaseWin === 3) {
+        pseudoPrompt.textContent="You don't seem to be in such good shape, I still won";
+      } else if (internalPointDeathCaseWin === 4) {
+        pseudoPrompt.textContent="I have a match point!";
+      } else if (internalPointDeathCaseWin === 5) {
+        pseudoPrompt.textContent="You lose the game! You know what this means?";
+      } else {
+        return false;
+      }
+    }
+
+
+        function deathLose() {
+          let internalPointUserCaseWin = userPointOfGame + 1;
+      if (internalPointUserCaseWin === 1) {
+        pseudoPrompt.textContent="Wow, you win a pointWow, you scored a point, I'm desperate";
+      } else if (internalPointUserCaseWin === 2) {
+        pseudoPrompt.textContent="You scored another point but the game is still long";
+      } else if (internalPointUserCaseWin === 3) {
+        pseudoPrompt.textContent="Oh, you are a lucky one, aren't you?";
+      } else if (internalPointUserCaseWin === 4) {
+        pseudoPrompt.textContent="Damn, you have a match point";
+      } else if (internalPointUserCaseWin === 5) {
+        pseudoPrompt.textContent="You won, I don't know how you did it, but you won";
+        } else  {
+        return false;
         }
       }
-
-
-          function deathLose() {
-        if (userPointOfGame === 1) {
-          pseudoPrompt.textContent="Wow, you win a pointWow, you scored a point, I'm desperate";
-        } else if (userPointOfGame === 2) {
-          pseudoPrompt.textContent="You scored another point but the game is still long";
-        } else if (userPointOfGame === 3) {
-          pseudoPrompt.textContent="Oh, you are a lucky one, aren't you?";
-        } else if (userPointOfGame === 4) {
-          pseudoPrompt.textContent="Damn, you have a match point";
-        } else if (userPointOfGame === 5) {
-          pseudoPrompt.textContent="You won, I don't know how you did it, but you won";
-          } else  {
-          return false;
-          }
-        }
 
           function finishDeath() {
             endGame.classList.remove("invisibleChoice");
