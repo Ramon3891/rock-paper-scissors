@@ -100,6 +100,9 @@ let palyerField = document.getElementById("palyerField");
 let deathField = document.getElementById("deathField");
 let game = document.getElementById("game");
 let splashOut = document.getElementById("splashOut");
+let deathSplash = document.getElementById("deathSplash");
+let coffin = document.getElementById("coffin");
+let coffinDeath = document.getElementById("coffinDeath");
 
 
 
@@ -305,6 +308,12 @@ function playGame () {
             game.classList.add("invisibleChoice");
             splashOut.classList.remove("invisibleChoice");
             splashOut.classList.add("splashOutDeath");
+            deathSplash.classList.remove("invisibleChoice");
+            deathSplash.classList.add("ripImg");
+            coffin.classList.remove("invisibleChoice");
+            coffin.classList.add("deathDance");
+            coffinDeath.classList.remove("invisibleChoice");
+            coffinDeath.classList.add("deathToSplashOut");
         } else if (userPointOfGame >= 5) {
             endGame.classList.remove("visibleNext");
             endGame.classList.add("invisibleChoice");

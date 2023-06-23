@@ -308,4 +308,35 @@ width:0;
     background-color: white;
 }
 
+.ripImg {
+    width: auto;
+    height: 50vh;
+    position: fixed;
+    bottom:-9vh;
+    right:0;
+    display: flex;
+    justify-content: space-between;
+    padding:10vh 5% 0 0;
+    animation-name:fromTransparentToNone;
+    animation-duration: 15s;
+    cursor: pointer;
+    
+}
 
+.deathDance{
+    width: auto;
+    height: 65vh;
+    position: fixed;
+    top:-10vh;
+    left:0;
+    display: flex;
+    justify-content: space-between;
+    padding:10vh 5% 0 0;
+    animation-name:fromTransparentToNone;
+    animation-duration: 20s;
+    border-radius: 0 0 28% 0;
+}
+
+.deathToSplashOut {
+    position:fixed;top:3vh;right:28%;height:65vh;width:auto;
+}
