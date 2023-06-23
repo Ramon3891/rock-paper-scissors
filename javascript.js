@@ -263,7 +263,7 @@ function playGame () {
         function deathLose() {
           let internalPointUserCaseWin = userPointOfGame + 1;
       if (internalPointUserCaseWin === 1) {
-        pseudoPrompt.textContent="Wow, you win a pointWow, you scored a point, I'm desperate";
+        pseudoPrompt.textContent="Wow, you scored a point, I'm desperate";
       } else if (internalPointUserCaseWin === 2) {
         pseudoPrompt.textContent="You scored another point but the game is still long";
       } else if (internalPointUserCaseWin === 3) {
