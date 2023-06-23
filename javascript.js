@@ -187,33 +187,33 @@ function deathChoice() {
   return chosenOption;
 }
 
-      function playGame () {
-        let deathOutput = deathChoice();
-        if ( (checkGame() === true && ((playerOutput() === "rock" && deathOutput === "paperDeath") || (playerOutput() === "paper" && deathOutput === "scissorsDeath") || (playerOutput() === "scissors" && deathOutput === "rockDeath"))) ){
-          deathPointOfGame+=1;
-          deathPointOfGame != 5 ? (next.classList.remove("invisibleChoice"), next.classList.add("visibleNext")) : finishDeath();
-          deathPoint.textContent = deathPointOfGame.toString();
-          deathWin();
-          return ++deathPointOfGame;
-        } else if ((checkGame() === true &&  ((playerOutput() === "rock" && deathOutput === "scissorsDeath") || (playerOutput() === "paper" && deathOutput === "rockDeath") || (playerOutput() === "scissors" && deathOutput === "paperDeath"))) ){
-          userPointOfGame+=1;
-          userPointOfGame != 5 ? (next.classList.remove("invisibleChoice"), next.classList.add("visibleNext")) : finishUser();
-          playerPoint.textContent = userPointOfGame.toString();
-          deathLose();
-          return ++userPointOfGame;
-        } else if ((checkGame() === true && ((playerOutput() === "rock" && deathOutput === "rockDeath") || (playerOutput() === "paper" && deathOutput === "paperDeath") || (playerOutput() === "scissors" && deathOutput === "scissorsDeath"))) ){
-          pseudoPrompt.textContent="match in tie";
-          next.classList.remove("invisibleChoice");
-          next.classList.add("visibleNext");
-          return "match in tie";
-        } else if (checkGame() === "death") {
-          finishDeath();
-        } else if (checkGame() === "user") {
-          finishUser();
-        } else {
-          return false;
-        }
-      }
+function playGame () {
+  let deathOutput = deathChoice();
+  if ( (checkGame() === true && ((playerOutput() === "rock" && deathOutput === "paperDeath") || (playerOutput() === "paper" && deathOutput === "scissorsDeath") || (playerOutput() === "scissors" && deathOutput === "rockDeath"))) ){
+    let internalPointDeath = deathPointOfGame + 1;
+    internalPointDeath != 5 ? (next.classList.remove("invisibleChoice"), next.classList.add("visibleNext")) : finishDeath();
+    deathPoint.textContent = internalPointDeath;
+    deathWin();
+    return ++deathPointOfGame;
+  } else if ((checkGame() === true &&  ((playerOutput() === "rock" && deathOutput === "scissorsDeath") || (playerOutput() === "paper" && deathOutput === "rockDeath") || (playerOutput() === "scissors" && deathOutput === "paperDeath"))) ){
+    let internalPointUser = userPointOfGame + 1;
+    internalPointUser != 5 ? (next.classList.remove("invisibleChoice"), next.classList.add("visibleNext")) : finishUser();
+    playerPoint.textContent = internalPointUser;
+    deathLose();
+    return ++userPointOfGame;
+  } else if ((checkGame() === true && ((playerOutput() === "rock" && deathOutput === "rockDeath") || (playerOutput() === "paper" && deathOutput === "paperDeath") || (playerOutput() === "scissors" && deathOutput === "scissorsDeath"))) ){
+    pseudoPrompt.textContent="match in tie";
+    next.classList.remove("invisibleChoice");
+    next.classList.add("visibleNext");
+    return "match in tie";
+  } else if (checkGame() === "death") {
+    finishDeath();
+  } else if (checkGame() === "user") {
+    finishUser();
+  } else {
+    return false;
+  }
+}
 
 
 
