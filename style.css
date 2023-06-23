@@ -6,8 +6,6 @@ audio {
 width:0;
 }
 
-
-
 #splash {
     width: 95%;
     height: 90vh;
@@ -98,6 +96,216 @@ width:0;
 
 .gameInvisible {
     display: none;
+}
+
+.fixedTop {
+    box-shadow: 0 0 5px 0 #000;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:10vh;
+    border-bottom:1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#f0f0f0;
+    animation-name:fromLeftToCenter;
+    animation-duration: 5s;
+}
+
+.avatarUser {
+    padding: 1px 15px 0 15px;
+    font-size:8vh;
+    border:1px solid black; 
+    justify-content: space-between;
+    align-items: center;
+    animation-name:fromTransparentDelay;
+    animation-duration: 10s;
+    border-bottom:0;
+}
+
+.avatarDeath {
+    padding: 0 15px 1px 15px;
+    font-size:8vh;
+    border:1px solid black; 
+    justify-content: space-between;
+    align-items: center;
+    animation-name:fromTransparentDelay;
+    animation-duration: 10s;
+    border-bottom:0;
+}
+
+.pointPrompt {
+    font-size:5vh;
+    color:red;
+    flex-basis: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name:fromTransparentDelay;
+    animation-duration: 10s;
+}
+
+.pseudoPrompt {
+    text-align:center;
+    flex-basis: 80%;
+    padding:1vh;
+    background-color:#303030;
+    color:white;
+    border-radius:5px;
+    animation-name:fromTransparentDelay;
+    animation-duration: 10s;
+    font-weight: bold;
+}
+
+.fixedCenter {
+    width:100%;
+    height:90vh;
+    position:fixed;
+    top:10vh;
+    left:0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    animation-name:fromTransparentToNone;
+    animation-duration: 10s;
+}
+
+.playerSpace {
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+    flex-basis:  10%;
+    height:100%;
+}
+
+.playerChoice {
+    background-color:#8a2be2;
+    font-size:8vh;
+    height:8vh;
+    width:8vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    padding:25px;
+    border:1px solid black;
+    cursor: pointer;
+}
+
+.cloth {
+    flex-basis: 50%;
+    height:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.playerSide {
+    height:65%;
+    margin:0 0 0 15%;
+    background-color: #8a2be2;
+    border-radius:20px 0 0 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 42.5%;
+}
+
+.deathSide {
+    height:65%;
+    margin:0 0 0 0;
+    background-color: #303030;
+    border-radius:0 20px 20px 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 42.5%;
+}
+
+.deathDivImg {
+    flex-basis: 20%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgGameDeath {
+    height: 80vh;
+}
+
+.dissolve {
+    animation-name:dissolve;
+    animation-duration:10s;
+}
+
+.invisibleChoice {
+    display:none;
+}
+
+.visibleChoice {
+    background-color:#006400;
+    font-size:0vh;
+    height:0vh;
+    width:0vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    padding:25px;
+    border:1px solid black;
+    animation-name:beBig;
+    animation-duration:20s;
+    opacity: 0;
+}
+
+.visibleNext {
+    background-color:white;
+    border-radius:10px;
+    border:1px solid #000;
+    margin-left:15%;
+    height:50px;
+    color:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin-top:-10%;
+    cursor: pointer;
+}
+
+.splashOutDeath {
+    width: 95%;
+    height: 90vh;
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: space-between;
+    padding:10vh 5% 0 0;
+    animation-name:fromWhiteToBlack;
+    animation-duration: 10s;
+    background-color: black;
+}
+
+.splashOutUser {
+    width: 95%;
+    height: 90vh;
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: space-between;
+    padding:10vh 5% 0 0;
+    animation-name:fromBlackToWhite;
+    animation-duration: 10s;
+    background-color: white;
 }
 
 
