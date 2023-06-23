@@ -342,3 +342,11 @@ width:0;
 .deathToSplashOut {
     position:fixed;top:3vh;right:28%;height:65vh;width:auto;
 }
+
+.firework {
+    position:fixed;
+    top:0;
+    width:100%;
+    animation-name:fromTransparentToNone;
+    animation-duration: 15s;
+}

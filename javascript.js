@@ -103,7 +103,7 @@ let splashOut = document.getElementById("splashOut");
 let deathSplash = document.getElementById("deathSplash");
 let coffin = document.getElementById("coffin");
 let coffinDeath = document.getElementById("coffinDeath");
-
+let userCelebrate = document.getElementById("userCelebrate");
 
 
 let userPointOfGame = 0;
@@ -321,6 +321,8 @@ function playGame () {
             game.classList.add("invisibleChoice");
             splashOut.classList.remove("invisibleChoice");
             splashOut.classList.add("splashOutUser");
+            userCelebrate.classList.remove("invisibleChoice");
+            userCelebrate.classList.add("firework");
         } else {
           return false;
         }
