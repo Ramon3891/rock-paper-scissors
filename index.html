@@ -31,7 +31,56 @@
 
       
     </div> 
-    <div id = "game" class="invisible"></div> <!--start onclick of start button-->
+    <div id = "game" class="invisible"><!--start onclick of start button-->
+
+      <div id="top" class = "fixedTop">
+        <p id="player" class = "avatarUser">👤</p>
+        <p id="playerPoint" class = "pointPrompt"></p>
+        <p id="pseudoPrompt" class = "pseudoPrompt"></p>
+        <p id="deathPoint" class = "pointPrompt"></p>
+        <p id="death" class = "avatarDeath">💀</p>
+      </div>
+  
+      <div id="center" class = "fixedCenter">
+        <div id = "palyerField" class="playerSpace">
+          <div id = "playerRock" class = "playerChoice" title="Click here if you want to play rock" onclick="changeRock();playGame();" onmouseover="explainRock()" onmouseout="outExplainRock()">
+            <div id="rockSymbol">👊</div> 
+          </div>
+          <div id = "playerPaper" class = "playerChoice" title="Click here if you want to play paper" onclick="changePaper();playGame();" onmouseover="explainPaper()" onmouseout="outExplainPaper()">
+            <div id="paperSymbol">🖐️</div>  
+          </div>
+          <div id = "playerScissors" class = "playerChoice" title="Click here if you want to play scissors" onclick="changeScissors();playGame();" onmouseover="explainScissors()" onmouseout="outExplainScissors()">
+            <div id="scissorsSymbol">&#x270C;&#xFE0F;</div>
+          </div>             
+        </div>
+  
+        <div id = "gameField" class="cloth">
+          <div id = "clothPlayer" class="playerSide">
+            <div id="rockOnCloth" class="invisibleChoice">👊</div> 
+            <div id="paperOnCloth" class="invisibleChoice">🖐️</div> 
+            <div id="scissorsOnCloth" class="invisibleChoice">&#x270C;&#xFE0F;</div> 
+          </div>
+          <div id = "clothDeath" class="deathSide">       
+            <div id="deathPlayRock" class="invisibleChoice">👊</div> 
+            <div id="deathPlayPaper" class="invisibleChoice">🖐️</div> 
+            <div id="deathPlayScissors" class="invisibleChoice">&#x270C;&#xFE0F;</div>  
+          </div>      
+          <div id="next" onclick="reset();" class="invisibleChoice">next match</div>
+          <div id="finish" onclick="finish();" class="invisibleChoice">The game is over</div>
+        </div>
+  
+        <div id = "deathField" class="deathDivImg">
+          <img src="./deathGame.png" class="imgGameDeath" />
+        </div>      
+      </div>
+  
+    </div> 
+  
+    <div id = "splashOut" class="InvisibleChoice"><!--TEST                        SPLASHOUT-->
+
+    </div> 
+    
+    
 
 
     <script>
