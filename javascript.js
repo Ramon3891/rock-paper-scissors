@@ -1,6 +1,6 @@
 let splash = document.getElementById("splash");
 
-function audioStatus() { //from muted to unmuted
+function audioStatus() {  //from muted to unmuted
     let symbol = document.getElementById("audioSymbol");
     let audioElement = document.getElementById("funeral");
   
@@ -14,10 +14,10 @@ function audioStatus() { //from muted to unmuted
   
   }
 
-  const presentation = document.createElement("p");
+const presentation = document.createElement("p"); // Make intro onload page white type writer effect
   presentation.style.color = "white";
   presentation.style.fontSize = "27px";
-  presentation.style.whiteSpace = "pre-wrap"; // Utilizzo della proprietà whiteSpace
+  presentation.style.whiteSpace = "pre-wrap"; 
   presentation.style.overflowWrap = "break-word";
   presentation.style.lineHeight = "40px";
   let textForPresentation = `Well, dude, you're dead! It would happen sooner or later, it just happened, but...
@@ -28,13 +28,10 @@ What do you think about a "Rock-Paper-Scissors" game?
 Do you want to give it a try?`;
   let splashContainer = document.getElementById("splashContainer");
   splashContainer.appendChild(presentation);
-
   splashContainer.insertBefore(presentation, buttonContainer);
-
-
   let typeWriter = textForPresentation.split("");
   let i = 0;
-  
+
   function typeWriterOn() {
     if (i < typeWriter.length) {
       presentation.textContent += typeWriter[i];
@@ -45,7 +42,7 @@ Do you want to give it a try?`;
   setInterval(typeWriterOn, 50);
 
 
-  function readRules() {
+  function readRules() {  // Run onclik explainRules
     presentation.remove()
     let explainRules = document.getElementById("explainRules");
     explainRules.remove()
@@ -56,7 +53,7 @@ Do you want to give it a try?`;
     rulesExplained.style.whiteSpace = "pre-wrap";
     rulesExplained.style.overflowWrap = "break-word";
     rulesExplained.style.lineHeight = "32px";
-    rulesExplained.textContent = `The rules of "Rock-Paper-Scissors" are very simple:
+    rulesExplained.textContent = `The rules of "Rock-Paper-Scissors" are very simple:  
 You have to choose between rock, paper, and scissors. Then:
 - If you are playing rock, you win if your opponent chooses scissors (rock breaks scissors).
 - If you are playing scissors, you win if your opponent chooses paper (scissors cut paper).
@@ -70,7 +67,8 @@ splashContainer.appendChild(rulesExplained);
 splashContainer.insertBefore(rulesExplained, buttonContainer);
 }
 
-function runGame() {
+
+function runGame() {  // Run onclick letsPlay
   document.getElementById("splash").classList.add("invisibleChoice");
   document.getElementById("game").classList.remove("gameInvisible");
   document.getElementById("game").classList.add("gameVisible");
@@ -114,7 +112,7 @@ deathPoint.textContent = deathPointOfGame.toString();
 pseudoPrompt.textContent="let's start the game";
 
 
-   function changeRock() {
+   function changeRock() {  //run onclick playerRock
     rockSymbol.classList.add("dissolve");
           rockOnCloth.classList.remove("invisibleChoice");
           rockOnCloth.classList.add("visibleChoice");
@@ -124,7 +122,7 @@ pseudoPrompt.textContent="let's start the game";
           playerOutput();
    }
 
-   function changePaper() {
+   function changePaper() { //run onclick playerPaper
     paperSymbol.classList.add("dissolve");
         paperOnCloth.classList.remove("invisibleChoice");
         paperOnCloth.classList.add("visibleChoice");
@@ -134,7 +132,7 @@ pseudoPrompt.textContent="let's start the game";
         playerOutput();
    }
 
-   function changeScissors() {
+   function changeScissors() {  //run onclick playerScissors
     scissorsSymbol.classList.add("dissolve");
         scissorsOnCloth.classList.remove("invisibleChoice");
         scissorsOnCloth.classList.add("visibleChoice");
@@ -146,7 +144,7 @@ pseudoPrompt.textContent="let's start the game";
 
    
 
-      function playerOutput() {
+      function playerOutput() { // Return player's choice, preventing a direct call to changes functions
         let conditionPaper = paperOnCloth.className;
         let conditionSissors = scissorsOnCloth.className;
         let conditionRock = rockOnCloth.className;
@@ -177,10 +175,10 @@ function checkGame () {
   }
 }
 
-// first computer choice
 
 
-function deathChoice() {
+
+function deathChoice() {  // computer choice
   const options = ["rockDeath", "paperDeath", "scissorsDeath"];
   const randomIndex = Math.floor(Math.random() * options.length);
   const chosenOption = options[randomIndex];
@@ -199,7 +197,7 @@ function deathChoice() {
   return chosenOption;
 }
 
-function playGame () {
+function playGame () {  // this function run the game
   let deathOutput = deathChoice();
   if ( (checkGame() === true && ((playerOutput() === "rock" && deathOutput === "paperDeath") || (playerOutput() === "paper" && deathOutput === "scissorsDeath") || (playerOutput() === "scissors" && deathOutput === "rockDeath"))) ){
     let internalPointDeath = deathPointOfGame + 1;
@@ -230,7 +228,7 @@ function playGame () {
 
 
         
-      function reset () {
+      function reset () { // run onclick next
         rockSymbol.classList.remove("dissolve");
         rockOnCloth.classList.remove("visibleChoice");
         paperSymbol.classList.remove("dissolve");
@@ -250,11 +248,11 @@ function playGame () {
         deathPlayScissors.classList.remove("visibleChoice");
         pseudoPrompt.textContent=("Make your choice");
         playerRock.setAttribute("onclick", "changeRock();playGame();");
-playerPaper.setAttribute("onclick", "changePaper();playGame();");
-playerScissors.setAttribute("onclick", "changeScissors();playGame();");
+        playerPaper.setAttribute("onclick", "changePaper();playGame();");
+        playerScissors.setAttribute("onclick", "changeScissors();playGame();");
     }
 
-    function deathWin() {
+    function deathWin() { // Write in pseudoPrompt if death wins
       let internalPointDeathCaseWin = deathPointOfGame + 1;
       if (internalPointDeathCaseWin === 1) {
         pseudoPrompt.textContent="You lose, I win";
@@ -272,7 +270,7 @@ playerScissors.setAttribute("onclick", "changeScissors();playGame();");
     }
 
 
-        function deathLose() {
+        function deathLose() {  // Write in pseudoPrompt if death loses
           let internalPointUserCaseWin = userPointOfGame + 1;
       if (internalPointUserCaseWin === 1) {
         pseudoPrompt.textContent="Wow, you scored a point, I'm desperate";
@@ -289,7 +287,7 @@ playerScissors.setAttribute("onclick", "changeScissors();playGame();");
         }
       }
 
-          function finishDeath() {
+          function finishDeath() {  // Set elements if death wins
             endGame.classList.remove("invisibleChoice");
             endGame.classList.add("visibleNext");
             palyerField.classList.remove("fixedCenter");
@@ -301,7 +299,7 @@ playerScissors.setAttribute("onclick", "changeScissors();playGame();");
       }
 
 
-      function finishUser() {
+      function finishUser() { // Set elements if user wins
             endGame.classList.remove("invisibleChoice");
             endGame.classList.add("visibleNext");
             deathField.classList.remove("deathDivImg");
@@ -312,7 +310,7 @@ playerScissors.setAttribute("onclick", "changeScissors();playGame();");
           next.classList.add("invisibleChoice");
       }
 
-      function finish() {
+      function finish() { // run onclick finish, make game div invisible and set splashOut
         if (deathPointOfGame >= 5) {
             endGame.classList.remove("visibleNext");
             endGame.classList.add("invisibleChoice");
