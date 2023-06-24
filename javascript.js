@@ -118,6 +118,9 @@ pseudoPrompt.textContent="let's start the game";
     rockSymbol.classList.add("dissolve");
           rockOnCloth.classList.remove("invisibleChoice");
           rockOnCloth.classList.add("visibleChoice");
+          playerPaper.removeAttribute("onclick");
+          playerScissors.removeAttribute("onclick");
+          playerRock.removeAttribute("onclick");
           playerOutput();
    }
 
@@ -125,6 +128,9 @@ pseudoPrompt.textContent="let's start the game";
     paperSymbol.classList.add("dissolve");
         paperOnCloth.classList.remove("invisibleChoice");
         paperOnCloth.classList.add("visibleChoice");
+        playerPaper.removeAttribute("onclick");
+        playerRock.removeAttribute("onclick");
+        playerScissors.removeAttribute("onclick");
         playerOutput();
    }
 
@@ -132,6 +138,9 @@ pseudoPrompt.textContent="let's start the game";
     scissorsSymbol.classList.add("dissolve");
         scissorsOnCloth.classList.remove("invisibleChoice");
         scissorsOnCloth.classList.add("visibleChoice");
+        playerPaper.removeAttribute("onclick");
+        playerRock.removeAttribute("onclick");
+        playerScissors.removeAttribute("onclick");
         playerOutput();
    }
 
@@ -240,6 +249,9 @@ function playGame () {
         deathPlayScissors.classList.add("invisibleChoice");
         deathPlayScissors.classList.remove("visibleChoice");
         pseudoPrompt.textContent=("Make your choice");
+        playerRock.setAttribute("onclick", "changeRock();playGame();");
+playerPaper.setAttribute("onclick", "changePaper();playGame();");
+playerScissors.setAttribute("onclick", "changeScissors();playGame();");
     }
 
     function deathWin() {
