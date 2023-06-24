@@ -349,4 +349,5 @@ width:0;
     width:100%;
     animation-name:fromTransparentToNone;
     animation-duration: 15s;
+    cursor: pointer;
 }
