@@ -1,0 +1,352 @@
+body {
+    margin:0;
+}
+
+audio {
+width:0;
+}
+
+#splash {
+    width: 95%;
+    height: 90vh;
+    animation-name:fromWhiteToBlack;
+    animation-duration: 10s;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding:10vh 5% 0 0;
+}
+
+#audioSymbol {
+    font-size:50px;
+    cursor:pointer;
+    margin:0;
+    animation-name:fromTransparentToNone;
+    animation-duration: 10s;    
+}
+
+#death {
+    height: 80vh;
+    animation-name:fromTransparentToNone;
+    animation-duration: 10s;
+    padding-right: 5%;
+}
+
+#splashContainer {
+    height: 100vh;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+#buttonContainer {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    animation-name:fromTransparentToNoneButtonContainer;
+    animation-duration: 20s;
+    align-items: center;
+    padding:0 15%;
+}
+
+#letsPlay {
+    width:200px;
+    height: 40px;
+    border: 2px solid red;
+    border-radius:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#303030;
+    color: white;
+    margin-right: 10%;
+    cursor: pointer;
+}
+
+#explainRules {
+    width:200px;
+    height: 40px;
+    border: 2px solid red;
+    border-radius:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#303030;
+    color: white;
+    cursor: pointer;
+}
+
+
+.gameVisible {
+    width: 95%;
+    height: 90vh;
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: space-between;
+    padding:10vh 5% 0 0;
+    animation-name:fromBlackToWhite;
+    animation-duration: 10s;
+    background-color: white;
+}
+
+.gameInvisible {
+    display: none;
+}
+
+.fixedTop {
+    box-shadow: 0 0 5px 0 #000;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:10vh;
+    border-bottom:1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#f0f0f0;
+    animation-name:fromLeftToCenter;
+    animation-duration: 5s;
+}
+
+.avatarUser {
+    padding: 1px 15px 0 15px;
+    font-size:8vh;
+    border:1px solid black; 
+    justify-content: space-between;
+    align-items: center;
+    animation-name:fromTransparentDelay;
+    animation-duration: 10s;
+    border-bottom:0;
+}
+
+.avatarDeath {
+    padding: 0 15px 1px 15px;
+    font-size:8vh;
+    border:1px solid black; 
+    justify-content: space-between;
+    align-items: center;
+    animation-name:fromTransparentDelay;
+    animation-duration: 10s;
+    border-bottom:0;
+}
+
+.pointPrompt {
+    font-size:5vh;
+    color:red;
+    flex-basis: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name:fromTransparentDelay;
+    animation-duration: 10s;
+}
+
+.pseudoPrompt {
+    text-align:center;
+    flex-basis: 80%;
+    padding:1vh;
+    background-color:#303030;
+    color:white;
+    border-radius:5px;
+    animation-name:fromTransparentDelay;
+    animation-duration: 10s;
+    font-weight: bold;
+}
+
+.fixedCenter {
+    width:100%;
+    height:90vh;
+    position:fixed;
+    top:10vh;
+    left:0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    animation-name:fromTransparentToNone;
+    animation-duration: 10s;
+}
+
+.playerSpace {
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+    flex-basis:  10%;
+    height:100%;
+}
+
+.playerChoice {
+    background-color:#8a2be2;
+    font-size:8vh;
+    height:8vh;
+    width:8vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    padding:25px;
+    border:1px solid black;
+    cursor: pointer;
+}
+
+.cloth {
+    flex-basis: 50%;
+    height:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.playerSide {
+    height:65%;
+    margin:0 0 0 15%;
+    background-color: #8a2be2;
+    border-radius:20px 0 0 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 42.5%;
+}
+
+.deathSide {
+    height:65%;
+    margin:0 0 0 0;
+    background-color: #303030;
+    border-radius:0 20px 20px 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 42.5%;
+}
+
+.deathDivImg {
+    flex-basis: 20%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgGameDeath {
+    height: 80vh;
+}
+
+.dissolve {
+    animation-name:dissolve;
+    animation-duration:10s;
+}
+
+.invisibleChoice {
+    display:none;
+}
+
+.visibleChoice {
+    background-color:#006400;
+    font-size:0vh;
+    height:0vh;
+    width:0vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    padding:25px;
+    border:1px solid black;
+    animation-name:beBig;
+    animation-duration:20s;
+    opacity: 0;
+}
+
+.visibleNext {
+    background-color:red;
+    border-radius:10px;
+    border:1px solid #000;
+    margin-left:15%;
+    height:50px;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin-top:-10%;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.splashOutDeath {
+    width: 95%;
+    height: 90vh;
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: space-between;
+    padding:10vh 5% 0 0;
+    animation-name:fromWhiteToBlack;
+    animation-duration: 10s;
+    background-color: black;
+}
+
+.splashOutUser {
+    width: 95%;
+    height: 90vh;
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: space-between;
+    padding:10vh 5% 0 0;
+    animation-name:fromBlackToWhite;
+    animation-duration: 10s;
+    background-color: white;
+}
+
+.ripImg {
+    width: auto;
+    height: 50vh;
+    position: fixed;
+    bottom:-9vh;
+    right:0;
+    display: flex;
+    justify-content: space-between;
+    padding:10vh 5% 0 0;
+    animation-name:fromTransparentToNone;
+    animation-duration: 15s;
+    cursor: pointer;
+    
+}
+
+.deathDance{
+    width: auto;
+    height: 65vh;
+    position: fixed;
+    top:-10vh;
+    left:0;
+    display: flex;
+    justify-content: space-between;
+    padding:10vh 5% 0 0;
+    animation-name:fromTransparentToNone;
+    animation-duration: 20s;
+    border-radius: 0 0 28% 0;
+}
+
+.deathToSplashOut {
+    position:fixed;top:3vh;right:28%;height:65vh;width:auto;
+}
+
+.firework {
+    position:fixed;
+    top:0;
+    width:100%;
+    animation-name:fromTransparentToNone;
+    animation-duration: 15s;
+}

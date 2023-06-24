@@ -4,14 +4,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
-    <script src="./javascript.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./animation.css">
 </head>
 
 <body>
-<h1>This is a simple game, who run in console, I'll add a UI next time</h1>
+
+    <div id = "splash"><!--start onload-->
+
+        <audio id = "funeral" controls autoplay muted> <!--width is setting to zero-->
+            <source src="./audio.mp3" type="audio/mp3">
+          </audio> 
+
+          <img src="./death.png" id="death" />
+
+          <div id="splashContainer">
+
+            <div id="buttonContainer">
+          <button id="letsPlay" onclick="runGame()">Let's play</button>
+          <button id="explainRules" onclick="readRules()">I don't know the rules</button>
+        </div>
+
+        </div>
+          <p id="audioSymbol" onclick="audioStatus()">🔇</p>  
+
+
+      
+    </div> 
+    <div id = "game" class="gameInvisible"><!--start onclick of start button-->
+
+      <div id="top" class = "fixedTop">
+        <p id="player" class = "avatarUser">👤</p>
+        <p id="playerPoint" class = "pointPrompt"></p>
+        <p id="pseudoPrompt" class = "pseudoPrompt"></p>
+        <p id="deathPoint" class = "pointPrompt"></p>
+        <p id="deathTop" class = "avatarDeath">💀</p>
+      </div>
+  
+      <div id="center" class = "fixedCenter">
+        <div id = "palyerField" class="playerSpace">
+          <div id = "playerRock" class = "playerChoice" title="Click here if you want to play rock" onclick="changeRock();playGame();" onmouseover="explainRock()" onmouseout="outExplainRock()">
+            <div id="rockSymbol">👊</div> 
+          </div>
+          <div id = "playerPaper" class = "playerChoice" title="Click here if you want to play paper" onclick="changePaper();playGame();" onmouseover="explainPaper()" onmouseout="outExplainPaper()">
+            <div id="paperSymbol">🖐️</div>  
+          </div>
+          <div id = "playerScissors" class = "playerChoice" title="Click here if you want to play scissors" onclick="changeScissors();playGame();" onmouseover="explainScissors()" onmouseout="outExplainScissors()">
+            <div id="scissorsSymbol">&#x270C;&#xFE0F;</div>
+          </div>             
+        </div>
+  
+        <div id = "gameField" class="cloth">
+          <div id = "clothPlayer" class="playerSide">
+            <div id="rockOnCloth" class="invisibleChoice">👊</div> 
+            <div id="paperOnCloth" class="invisibleChoice">🖐️</div> 
+            <div id="scissorsOnCloth" class="invisibleChoice">&#x270C;&#xFE0F;</div> 
+          </div>
+          <div id = "clothDeath" class="deathSide">       
+            <div id="deathPlayRock" class="invisibleChoice">👊</div> 
+            <div id="deathPlayPaper" class="invisibleChoice">🖐️</div> 
+            <div id="deathPlayScissors" class="invisibleChoice">&#x270C;&#xFE0F;</div>  
+          </div>      
+          <div id="next" onclick="reset();" class="invisibleChoice">NEXT MATCH</div>
+          <div id="finish" onclick="finish();" class="invisibleChoice">The game is over</div>
+        </div>
+  
+        <div id = "deathField" class="deathDivImg">
+          <img src="./deathGame.png" class="imgGameDeath" />
+        </div>      
+      </div>
+  
+    </div> 
+  
+    <div id = "splashOut" class="InvisibleChoice"><!--TEST                        SPLASHOUT-->
+      <img id="deathSplash" src="./rip.png" onclick="window.location.reload()" class="invisibleChoice" />
+      <img id="coffin" src="./coffin.gif" class="invisibleChoice" />
+      <img id="coffinDeath" src="./deathGame.png" class="invisibleChoice" />
+      <video id="userCelebrate" class="invisibleChoice" muted loop autoplay onclick="window.location.reload()" src="./fireworks.mp4">
+      </video>
+      </div>
+    
+    
+
+
+    <script>
 
 
 
+
+      </script>
+      
+
+
+      
 </body>
-
+<script src="./javascript.js"></script>
 </html>
